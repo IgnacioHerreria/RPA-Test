@@ -1,6 +1,6 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="960,1456" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="960,515" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
-    <sco:Collection x:TypeArguments="x:String">
+    <scg:List x:TypeArguments="x:String" Capacity="34">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -35,10 +35,10 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>System.Security</x:String>
       <x:String>System.ComponentModel</x:String>
-    </sco:Collection>
+    </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="94">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="60">
       <AssemblyReference>Microsoft.CSharp</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
@@ -97,77 +97,86 @@
       <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="496,1391" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="512,359" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="nameTxt" />
+      <Variable x:TypeArguments="x:String" Name="response" />
       <Variable x:TypeArguments="x:Int32" Name="numbersLetters" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">
-          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">nameTxt</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">hello world</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:Int32">
-          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">numbersLetters</CSharpReference>
-        </OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">10</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,94" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info">
-      <ui:LogMessage.Message>
-        <InArgument x:TypeArguments="x:Object">
-          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">nameTxt</CSharpValue>
-        </InArgument>
-      </ui:LogMessage.Message>
-    </ui:LogMessage>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open note++" sap:VirtualizedContainerService.HintSize="434,900" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="7caf372f-bf0f-4c05-a2d3-e67fc032b6eb" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do in Note++" sap:VirtualizedContainerService.HintSize="400,607" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence sap:VirtualizedContainerService.HintSize="472,893" sap2010:WorkflowViewState.IdRef="Sequence_5">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="varResult" />
+        <Variable x:TypeArguments="x:Int32" Name="age" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="410,243" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Whats is your age?" Title="Set your age">
+        <ui:InputDialog.Result>
+          <OutArgument x:TypeArguments="x:String">
+            <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">varResult</CSharpReference>
+          </OutArgument>
+        </ui:InputDialog.Result>
+      </ui:InputDialog>
+      <If sap:VirtualizedContainerService.HintSize="410,499" sap2010:WorkflowViewState.IdRef="If_1">
+        <If.Condition>
+          <InArgument x:TypeArguments="x:Boolean">
+            <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">Int32.TryParse(varResult, out age) ? age&gt;=18 : false</CSharpValue>
+          </InArgument>
+        </If.Condition>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Write text on note++" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7caf372f-bf0f-4c05-a2d3-e67fc032b6eb" Version="V3">
-              <uix:NTypeInto.Text>
-                <InArgument x:TypeArguments="x:String">
-                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">nameTxt</CSharpValue>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">"OK"</CSharpValue>
                 </InArgument>
-              </uix:NTypeInto.Text>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </uix:NTypeInto>
-            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="338,227" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" Text="hola mundos" Version="V3" />
+              </ui:MessageBox.Text>
+            </ui:MessageBox>
           </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="-8, -8, 1382, 744" FilePath="C:\\Program Files\\Notepad++\\notepad++.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASgSURBVFhHrZdrTBxVFMdna/1iommamCaE+mhUjIZqxNqgVkQbTdpqY2qNCd9MbdqmjaKt2KAt7Gt2YWEtr4Xl0UpjF+T96ApYeRbQ1SK1tYQqXWwhrYYKpSywy+4c77nMDDPDArPIP/nnzD139pzfmZnN7jAog8Fwx2g0+ux2eyPLsn6MZO2VRpKfWWhdXFzcZDKZPNnZOTG04CIqf2GzK/6pKJZfzooAeACAGxm5DT09PaAmXhDihdnocrk4AsOlpaXn8WXnKW1X3O7CTS9yJ56OhM/XrJ3i0yIA1NXVYVgwOp1OWWxoaKBRWLOsCYqKTkKuLc+ZmZl9L19elDklp/PIwQTus9ff4mRXQQBA+QMB/ig0+Wb8QG4DBMjnHY5SyMrKvmmxWB/kWzC2ovKd+cUVnDHFGti797D/UMy2dfzWHMDlweGQ3Df8t8xmsxnKysooBN4Wmy13PL/g1OPYI914sEVnNAbiE5K5Dw8dtdDGghAgwHHwf52amkohBJMHFUhtf+axmMYz+ic4a2Is98Wn73KHP45bz7eeFV46jhS45B5atq8M3Qpqj2cSqlIj4KJtdaDdeh/3dfKGDL7tnAQAvP8r7RF3E3R9xcCogwk0WzRcU8o9G/i2cxIAgk1Avl7UwfbUuLdiG1wr1EC/neGaLUwu31Kuha5AUlIShIeHU+Oxcn8pj/zVAp1k+jGHBtrSKMCTfEu5BICbo3dk9NhYuAJ4LN1T45/LdvDTa4A0L+TbzZcAMDE9IZtACSDdW8r/3jgP560M3P12FU6PABv5dvMlAAyODMCN227RSgAhj7dDep5yjXaVb4c/CzTwB3Gp+RngWwWXycRSgMvDvXDL0yhaCSDNK8+Trt2DWdCB05euojHDtF8dQPe1DhjwJItWAghRsPQhRdfX19PP/VS7UZz+Uu1uYE06dQDf9zkXBZDmlecJx33XD/DTa+g3YHSoUz1AVW8p/D7+nmglgJDHyaXnSdfddY/C1QKGPP0M/PBNJP2hYs1adQDFrgL4dewd0UoA6V4w/zK4FdrTGRgvYaDrBANVbXsogNGcrA4gp8MKbf/sFK0EkO4Fc0vtw9Cfz4C7iIGWknW0HgUwLQHA8gAp57SyggKANLeQWwe2QiuZfoxM302mb70YTeuFBPDl2SNQfX37slxTvR76cPqTDDhPr6U5rIcymJLUAcRX7oOiq2+E7NNXtsA5iwZGyfQ/ZjBQ0v0szWM9lE4twB5HHKT99lrIdlRuhm5bGPRkr4YK+xoxj/VQWlYlwPun3oZE15aQ/V35B9DfdBS67Jsg62yUmMd6qGTjUgDkrxMC7MiLhQPt0SE70fIqtNR8BPmVb8ryWC8kgJjM52UFVLktGl6KfQgSql+BT5pflu1hvZAAoiwRsKv2ueW5Zn4O66GS1AJEGMIg9kzkihnroY4bjqsDCDt2PzyS/tiKGetRAL1KgAcSmBU3Sqtf4tdQALjrnQjqCa8HPL5JmKSegikvehqmfV7wEvt8PvJqNgMzvP1+PzXWROn1+sUB8C1Gq9OCjpDqyMmznj0mbzagJ8aIRlg0/o1TY2y+MADD/Af6+04xbZxXcQAAAABJRU5ErkJggg==" InformativeScreenshot="b82d2d9f448a47372f1ce90938719673.png" Selector="&lt;wnd app='notepad++.exe' cls='Notepad++' title='*new 6 - Notepad++ [Administrator]' /&gt;" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
+        </If.Then>
+        <If.Else>
+          <Sequence sap:VirtualizedContainerService.HintSize="376,174" sap2010:WorkflowViewState.IdRef="Sequence_8">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="error" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,86" sap2010:WorkflowViewState.IdRef="MessageBox_2">
+              <ui:MessageBox.Text>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">"Error"</CSharpValue>
+                </InArgument>
+              </ui:MessageBox.Text>
+            </ui:MessageBox>
+          </Sequence>
+        </If.Else>
+      </If>
+    </Sequence>
+    <Sequence sap:VirtualizedContainerService.HintSize="450,104" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Sequence>
   </Sequence>
 </Activity>
